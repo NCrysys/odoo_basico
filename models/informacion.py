@@ -8,8 +8,10 @@ class informacion(models.Model):
     _description = 'Exemplo informacion'
 
     name = fields.Char(required=True, size=20, string="Título")
-    description = fields.Text(string="Descripción")
+    descripcion = fields.Text(string="Descripción")
+    peso = fields.Float(digits=(6, 2), default=2.7, string="Peso en kilos")
     alto_en_cms = fields.Integer(string="Alto en centímetros")
     longo_en_cms = fields.Integer(string="Longo en centímetros")
     ancho_en_cms = fields.Integer(string="Ancho en centímetros")
-    peso = fields.Float(digits=(6, 2), default=2.7, string="Peso en kilos")
+    autorizado = fields.Boolean(default=True, string="¿Autorizado?")
+    sexo_traducido = fields.Selection([("Hombre", "Home"), ("Mujer", "Muller"), ("Otro", "Outro")], required=True, string="Sexo")
