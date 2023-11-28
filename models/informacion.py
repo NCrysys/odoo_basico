@@ -17,8 +17,8 @@ class informacion(models.Model):
     ancho_en_cms = fields.Integer(string="Ancho en centímetros:")
     literal = fields.Char(store=False)
     volume = fields.Float(digits=(6, 7), compute="_volume", store=True, string="Volume m3:")
-    peso = fields.Float(digits=(6, 2), default=2.7, string="Peso en kilos:")
-    densidade = fields.Float(compute="_densidade", store=True, string="Densidade:")
+    peso = fields.Float(digits=(6, 2), default=2.7, string="Peso en kg:")
+    densidade = fields.Float(compute="_densidade", store=True, string="Densidade kg/m3:")
     autorizado = fields.Boolean(default=True, string="¿Autorizado?")
     sexo_traducido = fields.Selection([("Hombre", "Home"), ("Mujer", "Muller"), ("Otro", "Outro")], required=True, string="Sexo:")
 
